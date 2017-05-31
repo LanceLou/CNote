@@ -28,7 +28,7 @@ Install it and enjoy it.
 
 ## adds
 
-Any question or advice, create a issus.
+Any question or advice, create a issue.
 
 That's all!
 
