@@ -1,0 +1,2 @@
+# CNote
+Chrome note extension
