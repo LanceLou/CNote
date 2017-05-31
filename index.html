@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Note插件界面测试</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="./styles/index.css" />
+</head>
+
+<body>
+  <!-- lc_noteSet_rotate_toShow lc_noteSet_rotate_toHidden-->
+  <!--<div class="lc_noteSet">
+    <form action="">
+      <label class="item-label">纸张颜色</label>
+      <div class="lc_color_panel">
+        <span class="lc_color_k1 selected">√</span>
+        <span class="lc_color_k2">√</span>
+        <span class="lc_color_k3">√</span>
+        <span class="lc_color_k4">√</span>
+        <span class="lc_color_k5">√</span>
+        <span class="lc_color_k6">√</span>
+      </div>
+      <label class="item-label">纸张大小</label>
+      <div class="sizeSet">
+        <label for="">长(width):</label> <input type="text" name="width"/>
+        <label for="">高(height):</label> <input type="text" name="height"/>
+      </div>
+    </form>
+    <button>完成</button>
+  </div>-->
+  <canvas id="canvas" width="22" height="22"></canvas>
+  
+  <script>
+    var i = 0;
+    window.setInterval(function () {
+      // var clicks = tab_clicks[lastTabId] || 0;
+
+      // Don't animate while in "click" mode.
+      // if (clicks > 0) return;
+
+      // Don't do anything if we don't have a tab yet.
+      // if (lastTabId == 0) return;
+
+      i++;
+      // chrome.pageAction.setIcon({
+      //   imageData: draw(i * 2, i * 4),
+      //   tabId: lastTabId
+      // });
+      draw(i, i)
+    }, 1000);
+
+    function draw(num) {
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.fillStyle = "#FFEB55";
+      context.fillRect(0, 0, canvas.width - 5, canvas.height - 3);
+      context.fillStyle = "#9BE7FF";
+      context.fillRect(canvas.width -14, canvas.height-15, canvas.width, canvas.height);
+      context.strokeText(num || '', canvas.width-12, canvas.height-3);
+      // context.fillStyle = "rgba(0,200,0,255)";
+      // context.fillRect(startx % 19, starty % 19, 8, 8);
+      // context.fillStyle = "rgba(0,0,200,255)";
+      // context.fillRect((startx + 5) % 19, (starty + 5) % 19, 8, 8);
+      // context.fillStyle = "rgba(200,0,0,255)";
+      // context.fillRect((startx + 10) % 19, (starty + 10) % 19, 8, 8);
+      // return context.getImageData(0, 0, 19, 19);
+    }
+  </script>
+</body>
+
+</html>

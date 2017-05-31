@@ -1,0 +1,29 @@
+{
+  "name": "lance-note",
+  "version": "1.0.0",
+  "description": "a chrome note extension for your page",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --inline --hot --content-base",
+    "build": "webpack"
+  },
+  "keywords": [
+    "note",
+    "chrome",
+    "extension"
+  ],
+  "author": "LanceLou",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "uuid": "^3.0.1"
+  }
+}

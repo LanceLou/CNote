@@ -1,0 +1,224 @@
+/*    transform: rotate3d(0,1,0,0deg);   */
+.lc_note_item{
+  width: 220px;
+  height: 180px;
+  background: linear-gradient(to bottom, #DAFFA7, #A5FF65);
+  padding-top: 20px;
+  padding-bottom: 25px;
+  position: absolute;
+  box-sizing: border-box;
+  transition: width,height 0.4s linear;
+  z-index: 9999 !important;
+  text-align: left !important;
+  font-size: 17px !important;
+}
+.lc_note_item_header{
+  width: 100%;
+  height: 20px;
+  background-color: #F7F8FA;
+  padding-left: 5px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  user-select: none;
+}
+.lc_note_item_header .btn-delete, .lc_note_item_header .btn-close{
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #FF3F4A;
+  width: 13px;
+  height: 13px;
+  line-height: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 0;
+  cursor: default;
+}
+.lc_note_item_header .btn-close{
+  margin-left: 20px;
+  background-color: #FFBD00;
+}
+.lc_note_item_header:hover .btn-delete{
+  font-size: 10px;
+}
+.lc_note_item_header:hover .btn-close{
+  font-size: 10px;
+}
+.lc_note_item_body{
+  height: 100%;
+  outline: 0;
+  padding: 3px;
+  overflow-y: scroll;
+  cursor: default;
+}
+.lc_note_item_footer{
+  width: 100%;
+  font-size: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  padding-left: 5px;
+  color: #555;
+  position: absolute;
+  bottom: 0;
+  user-select: none;
+}
+.lc_note_item_footer a.set{
+  height: 20px;
+  width: 20px;
+  background-image: url(http://ww1.sinaimg.cn/large/ad5d774bgy1fg3ogvwda6j200w00w0i2.jpg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  position: absolute;
+  right: 5px;
+  bottom: 1px;
+}
+
+.dash_line{
+  width: 600px;
+  height: 0;
+  border-top: 1px solid #555;
+  border-style: dashed;
+  display: block;
+  position: absolute;
+}
+
+.lc_noteSet {
+  width: 220px;
+  height: 180px;
+  background-color: #535355;
+  padding: 3px;
+  box-sizing: border-box;
+  position: absolute;
+  transform: rotate3d(0,-1,0,-90deg);
+  font-size: 0.5rem;
+  z-index: 9999;
+}
+.lc_noteSet .lc_color_panel {
+  text-align: center;
+}
+.lc_noteSet .lc_color_panel span {
+  width: 27px;
+  line-height: 27px;
+  display: inline-block;
+  text-align: center;
+  font-size: 0;
+  cursor: default;
+  vertical-align: middle;
+}
+.lc_noteSet .lc_color_panel span.selected{
+  font-size: 1rem;
+}
+span.lc_color_k1{ background-color: #A5FF65 }
+span.lc_color_k2{ background-color: #86A3FF }
+span.lc_color_k3{ background-color: #E29EFF }
+span.lc_color_k4{ background-color: #FF87F6 }
+span.lc_color_k5{ background-color: #B6B6B6 }
+span.lc_color_k6{ background-color: #8FE4FF }
+.lc_noteSet span {
+  font: 12px/1.5 "\5FAE\8F6F\96C5\9ED1",Arial,HELVETICA;
+}
+.lc_noteSet input{
+  width: 30px !important;
+  outline: 0 !important;
+  border: 0 !important;
+  opacity: 0.7 !important;
+  height: 1rem !important;
+  line-height: 1rem !important;
+  font-size: 0.5rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.lc_noteSet label{
+  font-size: 10px;
+  color: #ccc;
+}
+.lc_noteSet label.item-label{
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+.lc_noteSet button{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  outline: 0;
+  border: 0;
+  font-size: 3px;
+  min-height: 25px !important;
+
+  background-color: #222;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  padding: 0 5px;
+  color: #fff !important;
+}
+.lc_noteSet .sizeSet{
+  text-align: center;
+}
+
+/*界面note 和 noteSetting 动画相关*/
+
+.lc_noteSet_rotate_toShow {
+  animation: lc_noteSet_rotate_toShow 0.7s linear;
+}
+
+/**/
+.lc_noteSet_rotate_toHidden {
+  animation: lc_noteSet_rotate_toHidden 0.7s linear;
+}
+
+.lc_noteSet_hidden, .lc_noteItem_hidden{
+  transform: rotate3d(0,-1,0,-90deg);
+}
+.lc_noteSet_show, .lc_noteItem_show{
+  transform: rotate3d(0,-1,0,0deg);
+}
+
+/*right*/
+.lc_noteItem_rotate_toShow {
+  animation: lc_noteItem_rotate_toShow 0.7s linear;
+}
+
+.lc_noteItem_rotate_toHidden {
+  animation: lc_noteItem_rotate_toHidden 0.7s linear;
+}
+
+@keyframes lc_noteSet_rotate_toShow {
+  50% {
+    transform: rotate3d(0,-1,0,-90deg);
+  }
+  100% {
+    transform: rotate3d(0,-1,0,0deg);
+  }
+}
+@keyframes lc_noteItem_rotate_toHidden {
+  0% {
+    transform: rotate3d(0,-1,0,0deg);
+  }
+  50% {
+    transform: rotate3d(0,-1,0,-90deg);
+  }
+}
+
+/*反向动画*/
+@keyframes lc_noteItem_rotate_toShow {
+  50% {
+    transform: rotate3d(0,-1,0,-90deg);
+  }
+  100% {
+    transform: rotate3d(0,-1,0,0deg);
+  }
+}
+@keyframes lc_noteSet_rotate_toHidden {
+  0% {
+    transform: rotate3d(0,-1,0,0deg);
+  }
+  50% {
+    transform: rotate3d(0,-1,0,-90deg);
+  }
+}

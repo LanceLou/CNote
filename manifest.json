@@ -1,0 +1,27 @@
+{
+  "name": "LNote",
+  "description": "a chrome note extension for you!",
+  "version": "1.0",
+  "icons": {
+           "48": "imgs/lc_fav_48_48.png",
+          "128": "imgs/lc_fav_128_128.png" },
+  "author": "LanceLou",
+  "permissions": [
+    "activeTab", "tabs", "storage", "http://*/*", "https://*/*", "background"
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "page_action": {
+    "default_title": "create a note"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["./disc/bundle.js"],
+	    "css": ["./styles/index.css"],
+	    "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 2
+}
