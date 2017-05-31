@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c11e0604a6786657a76f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "51051ebca819f6ca84db"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1603,7 +1603,7 @@ var bindNoteToMousemove = function bindNoteToMousemove(id) {
   var mouseMoveObj = new _mouseDownMove2.default(document.body, noteDom, noteDom);
   mouseMoveObj.addMoveListenerCallback(function (data) {
     noteSetDom.style.left = data.x + 'px';
-    noteSetDom.style.top = data.y + 'px';
+    noteSetDom.style.top = window.scrollY + data.y + 'px';
     updateNotePosition(id, data);
   });
 };
@@ -1780,7 +1780,7 @@ var setHandler = function () {
   };
 }();
 var updateNotePosition = (0, _util.throttle)(function (id, pos) {
-  noteList[id].pos.top = pos.y;
+  noteList[id].pos.top = window.scrollY + pos.y;
   noteList[id].pos.right = document.body.getBoundingClientRect().width - pos.x - noteList[id].width;
   (0, _config.saveNoteList)(noteList);
 }, 300);

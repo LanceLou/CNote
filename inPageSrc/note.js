@@ -127,7 +127,7 @@ const bindNoteToMousemove = (id) => {
   let mouseMoveObj = new ElementMouseMove(document.body, noteDom, noteDom);
   mouseMoveObj.addMoveListenerCallback(data => {
     noteSetDom.style.left = data.x + 'px';
-    noteSetDom.style.top = data.y + 'px';
+    noteSetDom.style.top = window.scrollY + data.y + 'px';
     updateNotePosition(id, data);
   });
 };
@@ -304,7 +304,7 @@ const setHandler = (() => {
   };
 })();
 const updateNotePosition = throttle((id, pos) => {
-  noteList[id].pos.top = pos.y;
+  noteList[id].pos.top = window.scrollY + pos.y;
   noteList[id].pos.right = document.body.getBoundingClientRect().width - pos.x - noteList[id].width;
   saveNoteList(noteList);
 }, 300);
