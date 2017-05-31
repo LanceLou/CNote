@@ -9,7 +9,7 @@ author: LanceLou(Of course me)
 
 
 
-![demo-1](http://ww1.sinaimg.cn/large/ad5d774bgy1fg4joa289pj213z0ozdk7.jpg)
+![demo-1](imgs/banner.png)
 
 
 
